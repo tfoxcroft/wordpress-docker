@@ -8,7 +8,9 @@ wordpress:
 wordpress_db:
   image: mysql
   environment:
-    MYSQL_ROOT_PASSWORD: examplepass
+    MYSQL_ROOT_PASSWORD: wordpress
+  ports:
+    - 3306:3306
 
 phpmyadmin:
   image: corbinu/docker-phpmyadmin
@@ -18,4 +20,4 @@ phpmyadmin:
     - 8001:80
   environment:
     MYSQL_USERNAME: root
-    MYSQL_ROOT_PASSWORD: examplepass
+    MYSQL_ROOT_PASSWORD: wordpress
